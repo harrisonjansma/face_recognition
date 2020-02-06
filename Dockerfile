@@ -46,5 +46,4 @@ RUN cd /root/face_recognition && \
     pip3 install -r requirements.txt && \
     python3 setup.py install
 
-CMD cd /root/face_recognition/examples && \
-    python3 recognize_faces_in_pictures.py
+#EXPOSE 5001
