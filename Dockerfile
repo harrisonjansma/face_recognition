@@ -32,7 +32,7 @@ RUN cd ~ && \
     cd  dlib/ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
 
-
+RUN pip3 install flask
 # The rest of this file just runs an example script.
 
 # If you wanted to use this Dockerfile to run your own app instead, maybe you would do this:
@@ -46,4 +46,7 @@ RUN cd /root/face_recognition && \
     pip3 install -r requirements.txt && \
     python3 setup.py install
 
-#EXPOSE 5001
+EXPOSE 5001
+
+CMD cd /root/face_recognition/examples && \
+    python3 web_service_example.py
